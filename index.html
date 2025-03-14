@@ -11,37 +11,20 @@
   <title>Dezimal-Uhrzeit</title>
 </head>
 <body>
-<h1>Regular Clock vs. Decimal Clock</h1>
-<span class="tooltip-icon" onclick="toggleTooltip()">ℹ️</span>
-<div class="clocks">
-  <div class="regularClocks">
-    <regular-clock class="analogClocks"></regular-clock>
-    <regular-digi-clock class="digiClocks"></regular-digi-clock>
-  </div>
-  <div class="decimalClocks">
-    <decimal-clock class="analogClocks"></decimal-clock>
-    <decimal-digi-clock class="digiClocks"></decimal-digi-clock>
-  </div>
-</div>
-<div id="tooltip-text" class="tooltip-text">
-        Die Umrechnungsfaktoren für das dezimale Zeitsystem:
-    <div>
-        <p>1 normale Stunde ≈ 0,83 dezimale Stunden</p>
-        <p>1 normale Minute ≈ 1,67 dezimale Minuten</p>
-        <p>1 normale Sekunde ≈ 1,67 dezimale Sekunden</p>
+  <h1>Regular Clock vs. Decimal Clock</h1>
+  <span class="tooltip-icon">ℹ️</span>
+  <div class="clocks">
+    <div class="regularClocks">
+      <regular-clock class="analogClocks"></regular-clock>
+      <regular-digi-clock class="digiClocks"></regular-digi-clock>
     </div>
-    <br>Rückrechnung:
-    <div>
-        <p>1 dezimale Stunde ≈ 1,2 normale Stunden</p>
-        <p>1 dezimale Minute ≈ 0,6 normale Minuten (36 Sekunden)</p>
-        <p>1 dezimale Sekunde ≈ 0,6 normale Sekunden (600 ms)</p>
+    <div class="decimalClocks">
+      <decimal-clock class="analogClocks"></decimal-clock>
+      <decimal-digi-clock class="digiClocks"></decimal-digi-clock>
     </div>
-</div>
+  </div>
+  <div id="tooltip-text" class="tooltip-text"></div>
 </body>
-<script>
-  function toggleTooltip() {
-      const tooltip = document.getElementById("tooltip-text");
-      tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
-  }
-</script>
+  <script src="./scripts/translations.js" type="module" defer></script>
+  <script src="./scripts/tooltip.js" type="module" defer></script>
 </html>

@@ -3,7 +3,6 @@
   word-wrap: break-word;
   font-weight: 400;
   font-style: normal;
-  --text-optimal-width: clamp(45ch, 50%, 75ch);
   box-sizing: border-box;
   --background: #0a0a0a;
   --foreground: #ededed;
@@ -88,6 +87,6 @@ h1 {
   }
 
   .tooltip-text {
-    top: 20%;
+    top: 25%;
   }
 }
