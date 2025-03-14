@@ -5,7 +5,7 @@ class RegularClock extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                .clock {
+                :host(.analogClocks) .clock {
                     width: 200px;
                     height: 200px;
                 }

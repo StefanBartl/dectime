@@ -5,7 +5,7 @@ class DecimalDigiClock extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                .clock {
+                :host(.digiClocks) .clock {
                     font-family: monospace;
                     font-size: 24px;
                     background: black;
