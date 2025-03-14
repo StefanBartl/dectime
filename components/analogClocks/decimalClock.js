@@ -72,12 +72,11 @@ class DecimalClock extends HTMLElement {
         const minuteDeg = decimalMinutes * 3.6;  // 360° / 100 Minuten = 3.6° pro Minute
         const secondDeg = decimalSeconds * 3.6;  // 360° / 100 Sekunden = 3.6° pro Sekunde
 
-        // Zeiger setzen (Shadow DOM verwenden!)
+        // Zeiger setzen
         this.shadowRoot.getElementById("hour-hand").style.transform = `rotate(${hourDeg}deg)`;
         this.shadowRoot.getElementById("minute-hand").style.transform = `rotate(${minuteDeg}deg)`;
         this.shadowRoot.getElementById("second-hand").style.transform = `rotate(${secondDeg}deg)`;
     }
 }
 
-// Web Component registrieren
 customElements.define("decimal-clock", DecimalClock);

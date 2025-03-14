@@ -52,19 +52,19 @@ class RegularClock extends HTMLElement {
     }
 
     disconnectedCallback() {
-        clearInterval(this.interval); // Stoppt die Uhr, wenn sie entfernt wird
+        clearInterval(this.interval);
     }
 
     updateClock() {
         const now = new Date();
         const hours = now.getHours() % 12;
         const minutes = now.getMinutes();
-        const seconds = now.getSeconds() + now.getMilliseconds() / 1000; // Fließender Sekundenübergang
+        const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
 
         // Winkel berechnen
         const hourDeg = (hours * 30) + (minutes / 2);
-        const minuteDeg = (minutes * 6) + (seconds / 10); // Fließende Minutenrotation
-        const secondDeg = seconds * 6; // Fließender Übergang der Sekunden
+        const minuteDeg = (minutes * 6) + (seconds / 10);
+        const secondDeg = seconds * 6;
 
         // Zeiger bewegen
         this.shadowRoot.getElementById("hour-hand").style.transform = `rotate(${hourDeg}deg)`;
@@ -73,5 +73,4 @@ class RegularClock extends HTMLElement {
     }
 }
 
-// Web Component registrieren
 customElements.define("regular-clock", RegularClock);
