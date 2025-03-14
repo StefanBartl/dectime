@@ -5,7 +5,7 @@ class DecimalDigiClock extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                .clock {
+                :host(.digiClocks) .clock {
                     font-family: monospace;
                     font-size: 24px;
                     background: black;
@@ -34,7 +34,7 @@ class DecimalDigiClock extends HTMLElement {
 
         const decimalSeconds = (msSinceMidnight / 86400000) * 100000;
         const decimalMinutes = decimalSeconds / 100;
-        const decimalHours = decimalMinutes / 100;
+        const decimalHours = decimalMinutes / 100 * 2;
 
         const hours = String(Math.floor(decimalHours)).padStart(2, "0");
         const minutes = String(Math.floor(decimalMinutes % 100)).padStart(2, "0");

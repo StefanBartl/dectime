@@ -5,7 +5,7 @@ class DecimalClock extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
             <style>
-                .clock {
+                :host(.analogClocks) .clock {
                     width: 200px;
                     height: 200px;
                 }
@@ -32,7 +32,7 @@ class DecimalClock extends HTMLElement {
 
                 <!-- Dezimal-Ziffern (1 bis 10) -->
                 ${Array.from({ length: 10 }, (_, i) => {
-                    const angle = ((i * 36) - 90) * (Math.PI / 180);
+                    const angle = ((i * 36) - 55) * (Math.PI / 180);
                     const x = 50 + Math.cos(angle) * 33;
                     const y = 50 + Math.sin(angle) * 33;
                     return `<text x="${x}" y="${y +2}" text-anchor="middle" font-size="8">${i + 1}</text>`;
